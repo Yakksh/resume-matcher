@@ -25,7 +25,7 @@ This will extract all the required detials for you and will store in `data/prepr
 python -u src/pdf_extraction.py
 ```
 
-#### Step 2: Run main.py to get your Top 5 Candidates for every job Description you have.
+#### Step 2: Run `main.py` to get your Top 5 Candidates for every job Description you have.
 
 ```bash
 python -u main.py
