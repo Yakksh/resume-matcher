@@ -1,8 +1,20 @@
 import os
 import pandas as pd
 import numpy as np
+import json
 from src.job_description_fetch import load_job_descriptions
 from src.candidate_job_matching import get_text_embeddings, match_candidates_to_jobs
+
+
+def preprocess_job_descriptions(jobs):
+    model_responses = []
+    for desc in jobs:
+        de = json.loads(desc)
+        features = [de["Core Responsibilities"], de["Required Skills"], de["Educational Requirements"], de["Experience Level"]]
+        res = ', '.join(features)
+        model_responses.append(str(res))
+    
+    return model_responses
 
 preprocessed_data_directory = 'data/preprocessed_data/'
 
@@ -19,6 +31,8 @@ if __name__ == "__main__":
     # Load job descriptions and candidate CVs as text
     job_descriptions = pd.read_csv('data/preprocessed_data/job_descriptions/all_job_descriptions.csv')
     job_descs = job_descriptions['model_response'].tolist()
+    job_descs = preprocess_job_descriptions(job_descs)
+
 
     candidate_cvs = pd.read_csv('data/preprocessed_data/cv_details/all_cv_details.csv')
     candidate_cvs = candidate_cvs[candidate_cvs.Education!='not available']
