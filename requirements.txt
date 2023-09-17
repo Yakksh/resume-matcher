@@ -1,0 +1,7 @@
+spacy==2.3.5
+datasets==2.14.5
+pypdf2==2.11.0
+pyresparser==1.0.6
+transformers==4.33.2
+torch==2.0.1
+scikit-learn
