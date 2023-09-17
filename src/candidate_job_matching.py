@@ -20,7 +20,7 @@ def get_text_embeddings(text):
 
     return embeddings
 
-# Function to perform candidate-job matching
+# Function to perform job-candidate matching
 def match_candidates_to_jobs(candidate_cv_embeddings, job_description_embeddings):
     similarity_scores = cosine_similarity(job_description_embeddings, candidate_cv_embeddings)
     return similarity_scores
