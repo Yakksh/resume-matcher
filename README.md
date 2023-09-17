@@ -3,7 +3,7 @@
 ```bash
 pip install virtualenv
 virtualenv venv
-.venv/Scripts/activate
+venv/Scripts/activate
 ```
 
 ### Installing the Requirements
