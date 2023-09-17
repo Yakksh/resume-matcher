@@ -17,9 +17,9 @@ python -m spacy download en_core_web_sm
 
 #### Step 1: Extract the required candidates details from their CVs
 
-data/cv_dataset contains all the pdfs of candidates CVs.
+The directory `data/cv_dataset` contains all the pdfs of candidates CVs.
 
-This will extract all the required detials for you and will store in data/preprocessed_data/cv_details.
+This will extract all the required detials for you and will store in `data/preprocessed_data/cv_details`.
 
 ```bash
 python -u src/pdf_extraction.py
